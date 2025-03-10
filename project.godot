@@ -10,10 +10,11 @@ config_version=5
 
 [application]
 
-config/name="bubbles"
-config/features=PackedStringArray("4.4", "Forward Plus")
+config/name="bubbless"
+run/main_scene="uid://da2wfhdekosy6"
+config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
 [rendering]
 
-renderer/rendering_method="forward_plus"
+renderer/rendering_method="mobile"
