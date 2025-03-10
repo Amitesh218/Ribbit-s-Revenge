@@ -10,7 +10,10 @@ config_version=5
 
 [application]
 
-config/name="New platformer game"
-run/main_scene="res://mains.tscn"
-config/features=PackedStringArray("4.3", "Forward Plus")
+config/name="bubbles"
+config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[rendering]
+
+renderer/rendering_method="forward_plus"
