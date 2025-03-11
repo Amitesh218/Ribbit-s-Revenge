@@ -20,4 +20,5 @@ offset_bottom = 233.0
 tooltip_text = "this is the quit button"
 text = "quit"
 
+[connection signal="pressed" from="playbut" to="." method="_on_playbut_pressed"]
 [connection signal="pressed" from="quitbut" to="." method="_on_quitbut_pressed"]
