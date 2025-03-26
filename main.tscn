@@ -1,24 +1,49 @@
-[gd_scene load_steps=2 format=3 uid="uid://da2wfhdekosy6"]
+[gd_scene load_steps=5 format=3 uid="uid://bsxh2rbjdr7lf"]
 
-[ext_resource type="Script" uid="uid://dvolg7dc1yihr" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://cn82qf57rfq53" path="res://player.tscn" id="1_emnjh"]
+[ext_resource type="PackedScene" uid="uid://deciqb48umdph" path="res://enemy.tscn" id="1_sq3tn"]
 
-[node name="Main" type="Node2D"]
-script = ExtResource("1_ig7tw")
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0lh2g"]
 
-[node name="playbut" type="Button" parent="."]
-offset_left = 197.0
-offset_top = 59.0
-offset_right = 338.0
-offset_bottom = 133.0
-text = "play"
+[sub_resource type="GDScript" id="GDScript_6tke0"]
+script/source = "extends Label
 
-[node name="quitbut" type="Button" parent="."]
-offset_left = 204.0
-offset_top = 159.0
-offset_right = 345.0
-offset_bottom = 233.0
-tooltip_text = "this is the quit button"
-text = "quit"
 
-[connection signal="pressed" from="playbut" to="." method="_on_playbut_pressed"]
-[connection signal="pressed" from="quitbut" to="." method="_on_quitbut_pressed"]
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	text = \"HP: \" + str(get_node(\"../../Player/Player\").health)
+"
+
+[node name="main" type="Node2D"]
+
+[node name="floor" type="StaticBody2D" parent="."]
+position = Vector2(284, 367)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor"]
+shape = SubResource("WorldBoundaryShape2D_0lh2g")
+
+[node name="Player" type="Node2D" parent="."]
+
+[node name="Player" parent="Player" instance=ExtResource("1_emnjh")]
+position = Vector2(97, 48)
+
+[node name="mobs" type="Node2D" parent="."]
+
+[node name="enemy" parent="mobs" instance=ExtResource("1_sq3tn")]
+position = Vector2(476, 39)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Hp" type="Label" parent="UI"]
+offset_left = 13.0
+offset_top = 10.0
+offset_right = 53.0
+offset_bottom = 33.0
+theme_override_font_sizes/font_size = 24
+text = "HP"
+script = SubResource("GDScript_6tke0")

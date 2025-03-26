@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://deciqb48umdph"]
+
+[ext_resource type="Texture2D" uid="uid://dvh2wann0xi3b" path="res://icon.svg" id="1_7hlm8"]
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_hxlgn"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6vd17"]
+radius = 14.0
+height = 28.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x3ejq"]
+radius = 213.235
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7kuel"]
+size = Vector2(20, 13)
+
+[node name="enemy" type="CharacterBody2D"]
+script = ExtResource("1_hxlgn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2.86102e-06, 0)
+scale = Vector2(0.195312, 0.222656)
+texture = ExtResource("1_7hlm8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("CapsuleShape2D_6vd17")
+
+[node name="detectionrange" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detectionrange"]
+shape = SubResource("CircleShape2D_x3ejq")
+
+[node name="vulnerability" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="vulnerability"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_7kuel")
+
+[connection signal="body_entered" from="detectionrange" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="detectionrange" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="vulnerability" to="." method="_on_vulnerability_body_entered"]
