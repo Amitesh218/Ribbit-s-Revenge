@@ -4,13 +4,14 @@ extends CharacterBody2D
 var direction: Vector2 = Vector2.RIGHT
 
 func _ready():
-	# Normalize direction to prevent unexpected speed boosts
 	direction = direction.normalized()
 
 func _physics_process(delta):
 	var collision = move_and_collide(direction * speed * delta)
 	if collision:
 		var collider = collision.get_collider()
-		if collider.name == "suicidechaser" or collider.name == "shooter" or collider.name == "tshooter":
+
+		if collider.name.begins_with("shooter") or collider.name == "suicidechaser" :
 			collider.health -= 5
+
 		queue_free()
