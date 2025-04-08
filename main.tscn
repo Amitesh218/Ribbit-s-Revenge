@@ -292,12 +292,12 @@ position = Vector2(112, 309)
 position = Vector2(694, 91)
 
 [node name="shooter2" parent="mobs" instance=ExtResource("4_1bvp3")]
-position = Vector2(297, 136)
+position = Vector2(302, 558)
 
-[node name="shooter_t" parent="mobs" instance=ExtResource("5_lquwl")]
+[node name="tshooter" parent="mobs" instance=ExtResource("5_lquwl")]
 position = Vector2(692, 15)
 
-[node name="shooter_t2" parent="mobs" instance=ExtResource("5_lquwl")]
+[node name="tshooter2" parent="mobs" instance=ExtResource("5_lquwl")]
 position = Vector2(786, 376)
 
 [node name="UI" type="CanvasLayer" parent="."]

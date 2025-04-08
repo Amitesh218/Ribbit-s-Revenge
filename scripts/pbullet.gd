@@ -11,7 +11,7 @@ func _physics_process(delta):
 	if collision:
 		var collider = collision.get_collider()
 
-		if collider.name.begins_with("shooter") or collider.name == "suicidechaser" :
+		if collider.name.contains("shooter") or collider.name == "suicidechaser":
 			collider.health -= 5
 
 		queue_free()

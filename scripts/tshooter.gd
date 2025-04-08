@@ -33,10 +33,11 @@ func _physics_process(delta: float) -> void:
 		
 		if direction.x > 0:
 			get_node("AnimatedSprite2D").flip_h = true
-			print("right")
+			# print("right")
 		else :
 			get_node("AnimatedSprite2D").flip_h = false
-			print("left")
+			# print("left")
+			
 	else: #when chase is not true, which is when either the player's outta range or enemy's dead
 		if get_node("AnimatedSprite2D").animation != "death":
 			get_node("AnimatedSprite2D").play("idle")
@@ -48,7 +49,7 @@ func _physics_process(delta: float) -> void:
 		if shoot_timer <= 0.0:
 			shoot_timer = fire_rate
 			shoot_at_player()
-		print("aggro behavior goes here, in this case shooting two bullets in the direction of the player")
+		# print("aggro behavior goes here, in this case shooting two bullets in the direction of the player")
 		if direction.x > 0:
 			get_node("AnimatedSprite2D").flip_h = true
 		else:
