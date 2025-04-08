@@ -1,11 +1,11 @@
 extends RigidBody2D
 
-@export var speed := 100.0
+@export var speed := 200.0
 var direction: Vector2 = Vector2.RIGHT
 
 func _ready():
 	# Force direction to horizontal (preserves sign, but removes vertical movement)
-	direction = Vector2(sign(direction.x), 0)
+	
 	linear_velocity = direction * speed
 	contact_monitor = true
 	max_contacts_reported = 1

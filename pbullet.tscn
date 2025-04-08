@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwemef0sbc2fp"]
+
+[ext_resource type="Script" uid="uid://bg0l48sgsws65" path="res://scripts/pbullet.gd" id="1_fvrnb"]
+[ext_resource type="Texture2D" uid="uid://b7ka05887wb7f" path="res://Enemies/Bee/Bullet.png" id="2_iarle"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v8qja"]
+radius = 3.0
+
+[node name="pbullet" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 10
+script = ExtResource("1_fvrnb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_v8qja")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.751465, 0.69043)
+texture = ExtResource("2_iarle")
