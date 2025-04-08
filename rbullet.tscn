@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0olp2np30qdi"]
+
+[ext_resource type="Script" uid="uid://bms8ms1xhp41g" path="res://scripts/rbullet.gd" id="1_ru6vu"]
+[ext_resource type="Texture2D" uid="uid://c6icoo5lgs18b" path="res://Free/Other/Dust Particle.png" id="2_ybq3k"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ru6vu"]
+friction = 0.0
+bounce = 1.0
+absorbent = true
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v8qja"]
+radius = 3.0
+
+[node name="rbullet" type="RigidBody2D"]
+collision_layer = 4
+collision_mask = 9
+mass = 1000.0
+physics_material_override = SubResource("PhysicsMaterial_ru6vu")
+gravity_scale = 0.0
+linear_damp_mode = 1
+angular_damp_mode = 1
+script = ExtResource("1_ru6vu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_v8qja")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.751465, 0.69043)
+texture = ExtResource("2_ybq3k")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

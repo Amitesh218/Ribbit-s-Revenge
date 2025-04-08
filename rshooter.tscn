@@ -1,7 +1,7 @@
 [gd_scene load_steps=42 format=3 uid="uid://36silldi81mg"]
 
-[ext_resource type="Script" uid="uid://d1miwn12ta6yq" path="res://scripts/shooter.gd" id="1_5r21y"]
-[ext_resource type="PackedScene" uid="uid://d0olp2np30qdi" path="res://bullet.tscn" id="2_8e016"]
+[ext_resource type="Script" uid="uid://d1miwn12ta6yq" path="res://scripts/rshooter.gd" id="1_5r21y"]
+[ext_resource type="PackedScene" uid="uid://d0olp2np30qdi" path="res://rbullet.tscn" id="2_8e016"]
 [ext_resource type="Texture2D" uid="uid://bcaty8u07pfvn" path="res://Enemies/Snail/Idle (38x24).png" id="2_mc86n"]
 [ext_resource type="Texture2D" uid="uid://c6kb75qso4uj3" path="res://Enemies/Snail/Walk (38x24).png" id="3_8e016"]
 [ext_resource type="Texture2D" uid="uid://v53hossfvj4d" path="res://Enemies/Snail/Hit (38x24).png" id="4_mc86n"]
@@ -265,7 +265,6 @@ position = Vector2(6, 6.5)
 shape = SubResource("RectangleShape2D_bp4rk")
 
 [node name="playerdetection" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="playerdetection"]
 shape = SubResource("CircleShape2D_fo02g")
@@ -284,7 +283,7 @@ shape = SubResource("RectangleShape2D_8e016")
 [node name="damage" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="damage"]
-position = Vector2(2, 6.5)
+position = Vector2(5, 6.5)
 shape = SubResource("RectangleShape2D_ukgq1")
 
 [connection signal="body_entered" from="playerdetection" to="." method="_on_playerdetection_body_entered"]

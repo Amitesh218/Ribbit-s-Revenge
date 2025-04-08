@@ -52,7 +52,10 @@ func shoot_bullet():
 		return
 
 	var bullet = bullet_scene.instantiate()
-	var mouse_pos = get_global_mouse_position()
+
+	# Offset the aim slightly downward
+	var aim_offset := Vector2(0, 10)
+	var mouse_pos = get_global_mouse_position() + aim_offset
 	var dir = (mouse_pos - global_position).normalized()
 
 	var spawn_point = get_node("bulletspawn")  # Make sure the path is correct

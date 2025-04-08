@@ -5,6 +5,8 @@ var recently_stomped = false
 var is_dying = false
 var locked_position = Vector2.ZERO
 
+var health = 10
+
 const SPEED = 100.0
 
 func _ready() -> void:
@@ -37,6 +39,8 @@ func _physics_process(delta: float) -> void:
 	if is_dying:
 		position = locked_position
 		return
+	if health <=0:
+		death()
 	move_and_slide()
 	
 func _on_player_detection_body_entered(body: Node2D) -> void:

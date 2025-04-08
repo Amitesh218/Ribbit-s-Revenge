@@ -7,6 +7,8 @@ var is_dying = false
 var locked_position = Vector2.ZERO
 const SPEED = 50.0
 
+var health = 10
+
 @export var bullet_scene: PackedScene
 @export var fire_rate := 1
 var shoot_timer := 0.0
@@ -55,6 +57,9 @@ func _physics_process(delta: float) -> void:
 	if is_dying:
 		position = locked_position
 		return
+	
+	if health <= 0:
+		death()
 	
 	move_and_slide()
 
