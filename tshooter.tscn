@@ -143,7 +143,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bp4rk"]
-size = Vector2(20, 13)
+size = Vector2(20, 24)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fo02g"]
 radius = 381.295
@@ -154,7 +154,7 @@ radius = 242.405
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8e016"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ukgq1"]
-size = Vector2(35, 11)
+size = Vector2(22, 11)
 
 [node name="tshooter" type="CharacterBody2D"]
 collision_layer = 4
@@ -167,7 +167,7 @@ sprite_frames = SubResource("SpriteFrames_31akb")
 animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(6, 6.5)
+position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_bp4rk")
 
 [node name="playerdetection" type="Area2D" parent="."]
@@ -189,7 +189,7 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="vulnerability"]
-position = Vector2(6, 1)
+position = Vector2(1, -1)
 shape = SubResource("RectangleShape2D_8e016")
 
 [node name="damage" type="Area2D" parent="."]
@@ -197,7 +197,7 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="damage"]
-position = Vector2(6.5, 6.5)
+position = Vector2(0, 10)
 shape = SubResource("RectangleShape2D_ukgq1")
 
 [connection signal="body_entered" from="playerdetection" to="." method="_on_playerdetection_body_entered"]
