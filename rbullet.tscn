@@ -12,8 +12,8 @@ absorbent = true
 radius = 3.0
 
 [node name="rbullet" type="RigidBody2D"]
-collision_layer = 4
-collision_mask = 9
+collision_layer = 8
+collision_mask = 19
 mass = 1000.0
 physics_material_override = SubResource("PhysicsMaterial_ru6vu")
 gravity_scale = 0.0

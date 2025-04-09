@@ -7,8 +7,8 @@
 radius = 4.0
 
 [node name="pbullet" type="CharacterBody2D"]
-collision_layer = 4
-collision_mask = 10
+collision_layer = 8
+collision_mask = 5
 script = ExtResource("1_fvrnb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

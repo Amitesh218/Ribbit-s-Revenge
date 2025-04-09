@@ -187,7 +187,8 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_hqtel"]
 
 [node name="player" type="CharacterBody2D"]
-collision_mask = 8
+collision_layer = 2
+collision_mask = 21
 script = ExtResource("1_onrkg")
 bullet_scene = ExtResource("2_hqtel")
 

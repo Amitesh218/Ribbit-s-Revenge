@@ -30,7 +30,7 @@ func _physics_process(delta: float) -> void:
 		else :
 			velocity.x = direction.x * SPEED
 			get_node("AnimatedSprite2D").flip_h = false
-			#print("left")
+			print("left")
 			
 	else: #when chase is not true, which is when either the player's outta range or enemy's dead
 		if get_node("AnimatedSprite2D").animation != "death":

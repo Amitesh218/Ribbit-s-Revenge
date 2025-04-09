@@ -13,5 +13,6 @@ func _physics_process(delta):
 
 		if collider.name.contains("shooter") or collider.name == "suicidechaser":
 			collider.health -= 5
-
 		queue_free()
+		
+		

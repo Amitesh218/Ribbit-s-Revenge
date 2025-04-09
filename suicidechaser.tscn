@@ -218,8 +218,8 @@ size = Vector2(20, 21)
 size = Vector2(28, 16)
 
 [node name="suicidechaser" type="CharacterBody2D"]
-collision_layer = 2
-collision_mask = 9
+collision_layer = 4
+collision_mask = 3
 script = ExtResource("1_kofei")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -233,17 +233,23 @@ position = Vector2(0, 6)
 shape = SubResource("RectangleShape2D_if32r")
 
 [node name="PlayerDetection" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
 shape = SubResource("CircleShape2D_dejg6")
 
 [node name="vulnerability" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="vulnerability"]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_qm0wa")
 
 [node name="damage" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="damage"]
 position = Vector2(0, 7)

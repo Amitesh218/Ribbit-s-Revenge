@@ -43,6 +43,14 @@ mouse_left={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="world"
+2d_physics/layer_2="player"
+2d_physics/layer_3="enemies"
+2d_physics/layer_4="bullets"
+2d_physics/layer_5="platforms"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

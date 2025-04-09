@@ -157,8 +157,8 @@ radius = 242.405
 size = Vector2(35, 11)
 
 [node name="tshooter" type="CharacterBody2D"]
-collision_layer = 2
-collision_mask = 9
+collision_layer = 4
+collision_mask = 3
 script = ExtResource("1_02ypj")
 bullet_scene = ExtResource("2_470cr")
 
@@ -171,22 +171,30 @@ position = Vector2(6, 6.5)
 shape = SubResource("RectangleShape2D_bp4rk")
 
 [node name="playerdetection" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="playerdetection"]
 shape = SubResource("CircleShape2D_fo02g")
 
 [node name="stopnshoot" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="stopnshoot"]
 shape = SubResource("CircleShape2D_6k0da")
 
 [node name="vulnerability" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="vulnerability"]
 position = Vector2(6, 1)
 shape = SubResource("RectangleShape2D_8e016")
 
 [node name="damage" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="damage"]
 position = Vector2(6.5, 6.5)
