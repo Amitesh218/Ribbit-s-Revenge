@@ -2,10 +2,10 @@ extends CharacterBody2D
 var health = 100
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -500.0
 
 @export var bullet_scene: PackedScene
-@export var shoot_cooldown := 0.3
+@export var shoot_cooldown := 0.0
 var shoot_timer := 0.0
 
 func _physics_process(delta: float) -> void:
