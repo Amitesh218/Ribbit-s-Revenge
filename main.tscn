@@ -373,7 +373,7 @@ libraries = {
 autoplay = "hmove"
 
 [node name="player" parent="." instance=ExtResource("2_0xm2m")]
-position = Vector2(119, 81)
+position = Vector2(20, 83)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2(0, -11)
@@ -391,6 +391,9 @@ position = Vector2(694, 91)
 
 [node name="shooter2" parent="mobs" instance=ExtResource("4_1bvp3")]
 position = Vector2(302, 558)
+
+[node name="shooter3" parent="mobs" instance=ExtResource("4_1bvp3")]
+position = Vector2(295, 141)
 
 [node name="tshooter" parent="mobs" instance=ExtResource("5_lquwl")]
 position = Vector2(692, 15)

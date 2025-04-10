@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var speed := 300.0
-@export var lifespan := 2.0  # seconds
+@export var lifespan := 3.0  # seconds
 var direction: Vector2 = Vector2.RIGHT
 var life_timer := 0.0
 
