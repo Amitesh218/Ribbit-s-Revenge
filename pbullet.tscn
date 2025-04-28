@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dwemef0sbc2fp"]
 
 [ext_resource type="Script" uid="uid://bg0l48sgsws65" path="res://scripts/pbullet.gd" id="1_fvrnb"]
-[ext_resource type="Texture2D" uid="uid://drvjt2jwkktjw" path="res://Free/Other/Transition.png" id="2_fvrnb"]
+[ext_resource type="Texture2D" uid="uid://cd7l7q4x1s2wm" path="res://Free/shuriken/01.png" id="2_fvrnb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iarle"]
 radius = 4.0
@@ -13,7 +13,7 @@ script = ExtResource("1_fvrnb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-5.96046e-08, -3.27826e-07)
-scale = Vector2(0.181818, 0.181818)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_fvrnb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

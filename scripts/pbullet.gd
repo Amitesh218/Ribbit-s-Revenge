@@ -13,13 +13,14 @@ func _physics_process(delta):
 	if life_timer >= lifespan:
 		queue_free()
 
-	var velocity = direction * speed
-	var collision = move_and_collide(velocity * delta)
+	var vel = direction * speed
+	var collision = move_and_collide(vel * delta)
 	if collision:
 		var collider = collision.get_collider()
 
-		if collider.name.contains("shooter") or collider.name == "suicidechaser":
-			collider.health -= 5
+		if collider.name.contains("shooter") or collider.name.contains("suicidechaser"):
+			if "take_damage" in collider:
+				collider.take_damage(5)
 			queue_free()
 			return
 

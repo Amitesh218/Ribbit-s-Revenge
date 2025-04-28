@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-@export var speed := 200.0
+@export var speed := 400.0
 var direction: Vector2 = Vector2.RIGHT
 
 func _ready():
@@ -12,7 +12,7 @@ func _ready():
 
 func _on_body_entered(body: Node) -> void:
 	if body.name == "player":
-		body.health -= 5
+		body.take_damage(2)
 		queue_free()
 	elif body.name != "bullet":
 		queue_free()

@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-@export var speed := 200.0
+@export var speed := 400.0
 @export var max_bounces := 3
-@export var lifetime := 5.0  # Seconds before bullet disappears
+@export var lifetime := 10.0  # Seconds before bullet disappears
 
 var direction: Vector2 = Vector2.RIGHT
 var bounce_count := 0
@@ -25,7 +25,7 @@ func _physics_process(delta):
 		var collider = collision.get_collider()
 
 		if collider.name == "player":
-			collider.health -= 5
+			collider.take_damage(2)
 			queue_free()
 			return
 

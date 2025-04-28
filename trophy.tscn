@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bat5wqt6u2srd"]
+
+[ext_resource type="Texture2D" uid="uid://daoxlqogn2067" path="res://Free/Items/Checkpoints/End/End (Idle).png" id="1_158bs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uxowg"]
+size = Vector2(46, 44)
+
+[node name="Trophy" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_158bs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_uxowg")
